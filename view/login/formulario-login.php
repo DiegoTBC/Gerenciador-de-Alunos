@@ -4,7 +4,6 @@
         <h1><?= $titulo; ?></h1>
     </div>
 
-    <div class="container">
         <form action="/realizar-login" method="post">
             <div class="form-group mb-3 ">
                 <label for="email">Email:</label>
@@ -17,7 +16,6 @@
 
             <button class="btn btn-primary">Entrar</button>
         </form>
-    </div>
 
 <?php require __DIR__ . '/../fim.php';
 

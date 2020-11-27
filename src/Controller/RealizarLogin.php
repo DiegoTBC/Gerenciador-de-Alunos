@@ -16,11 +16,16 @@ class RealizarLogin implements RequestHandlerInterface
 {
     use MensagemDeAviso;
 
-    private $repositorioUsuarios;
+    private \Doctrine\Persistence\ObjectRepository $repositorioUsuarios;
+    /**
+     * @var EntityManagerInterface
+     */
+    private EntityManagerInterface $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)
     {
-        $this->repositorioUsuarios = $entityManager->getRepository(Usuario::class);
+        $this->entityManager = $entityManager;
+        $this->repositorioUsuarios = $this->entityManager->getRepository(Usuario::class);
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface
@@ -41,7 +46,7 @@ class RealizarLogin implements RequestHandlerInterface
         );
 
         /** @var Usuario $usuario */
-        $usuario = $this->repositorioUsuarios->findOneBy(['email' === $email]);
+        $usuario = $this->repositorioUsuarios->findOneBy(['email' => $email]);
 
         if(is_null($usuario) || !$usuario->senhaEstaCorreta($senha)) {
             $this->defineMensagem('danger', 'Email ou senha inválido');
@@ -51,6 +56,5 @@ class RealizarLogin implements RequestHandlerInterface
         $_SESSION['logado'] = true;
 
         return new Response(302, ['Location' => '/listar-alunos']);
-
     }
 }

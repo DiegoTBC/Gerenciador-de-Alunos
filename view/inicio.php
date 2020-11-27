@@ -18,6 +18,8 @@
 </nav>
 <?php endif; ?>
 
+<div class="container">
+
 <?php if (isset($_SESSION['tipoMensagem']) && isset($_SESSION['mensagem']) ):?>
     <div class="alert alert-<?= $_SESSION['tipoMensagem'];?>">
         <?= $_SESSION['mensagem']; ?>

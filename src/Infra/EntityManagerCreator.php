@@ -19,7 +19,7 @@ class EntityManagerCreator
 
         $dbParams = array(
             'driver' => 'pdo_sqlite',
-            'path' => __DIR__ . '../../db.sqlite',
+            'path' => __DIR__ . '/../../db.sqlite'
         );
 
         return EntityManager::create($dbParams, $config);
