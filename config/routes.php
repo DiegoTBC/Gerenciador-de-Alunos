@@ -2,6 +2,7 @@
 
 $rotas = [
     '/login' => \Diego\Gerenciador\Controller\FormularioLogin::class,
+    '/logout' => \Diego\Gerenciador\Controller\Deslogar::class,
     '/realizar-login' => \Diego\Gerenciador\Controller\RealizarLogin::class,
     '/listar-alunos' => \Diego\Gerenciador\Controller\ListarAlunos::class,
     '/excluir-aluno' => \Diego\Gerenciador\Controller\ExclusaoAluno::class,
