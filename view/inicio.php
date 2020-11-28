@@ -8,16 +8,12 @@
 <body>
 
 <?php if($_SERVER['PATH_INFO'] !== '/login' && isset($_SESSION['logado'])):?>
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-light" style="background-color: #e3f2fd; margin-bottom: 30px">
     <div class="container-fluid">
-        <form class="d-flex">
-            <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-
+        <span class="navbar-brand mb-0 h1">GerenciaAlunos</span>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a href="/logout" class="btn btn-danger">Sair</a>
+                <a href="/logout" class="btn btn-outline-danger">Sair</a>
             </li>
         </ul>
     </div>
@@ -26,8 +22,14 @@
 
 <div class="container">
 
+    <?php if($_SERVER['PATH_INFO'] === '/login'):?>
+        <div class="jumbotron">
+            <h1 style="text-align: center"><?= $titulo; ?></h1>
+        </div>
+    <?php endif; ?>
+
 <?php if (isset($_SESSION['tipoMensagem']) && isset($_SESSION['mensagem']) ):?>
-    <div class="alert alert-<?= $_SESSION['tipoMensagem'];?>">
+    <div class="alert alert-<?= $_SESSION['tipoMensagem'];?>" style="margin-bottom: 20px">
         <?= $_SESSION['mensagem']; ?>
     </div>
     <?php

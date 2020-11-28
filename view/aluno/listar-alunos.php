@@ -1,6 +1,7 @@
 <?php require __DIR__ . '/../inicio.php';?>
 
-        <a href="/novo-aluno" class="btn btn-primary mb2">Novo Aluno</a>
+        <a href="/novo-aluno" class="btn btn-primary mb2" style="margin-bottom: 20px">Novo Aluno</a>
+
 
         <table class="table table-striped">
             <thead>
@@ -26,7 +27,6 @@
 
             </tbody>
         </table>
-
 
 
 <?php require __DIR__ . '/../fim.php';

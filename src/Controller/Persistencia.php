@@ -49,10 +49,6 @@ class Persistencia implements RequestHandlerInterface
             FILTER_SANITIZE_STRING
         );
 
-        if (empty($request->getParsedBody()['nome']) ||  empty($request->getParsedBody()['email']) || empty($request->getParsedBody()['curso'])) {
-            return new Response(302, ['Location' => '/listar-alunos']);
-        }
-
         $aluno = new Aluno();
         $aluno->setNome($nome);
         $aluno->setEmail($email);
