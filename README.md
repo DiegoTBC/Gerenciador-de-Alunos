@@ -24,7 +24,7 @@ Dependências:
 - [Doctrine ORM](https://www.doctrine-project.org/projects/orm.html): versão 2.7.4
 - [PHP-DI](https://php-di.org/): versão 6.0.2
 
-Bibliotecas de Layout:
+Biblioteca de Layout:
 - [Bootstrap](https://v5.getbootstrap.com/): versão 5.0.0
 
 ### Contato: 
